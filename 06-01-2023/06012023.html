@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function calculateSendingAmount() 
+        {
+            var environment = document.getElementById("environment").value;
+            
+            var sendingAmount = (document.getElementById("sendingAmount").value);
+            if (typeof sendingAmount =='string'){
+                document.getElementById("result").innerHTML = "Please enter a valid Amount " ;
+                }
+            else
+            {
+                sendingAmount=parseFloat(sendingAmount);
+                if (environment === "dev") 
+                {              
+                
+                sendingAmount += sendingAmount * 0.1; // Add 10% to the amount
+                document.getElementById("result").innerHTML = "Sending Amount: " + sendingAmount.toFixed(2);
+                
+                }
+            
+            
+                else if (environment === "test") {
+                    sendingAmount += sendingAmount * 0.2; // Add 20% to the amount
+                    document.getElementById("result").innerHTML = "Sending Amount: " + sendingAmount.toFixed(2);
+                } 
+                else if (environment === "stage") {
+                    sendingAmount += sendingAmount * 0.3; // Add 30% to the amount
+                    document.getElementById("result").innerHTML = "Sending Amount: " + sendingAmount.toFixed(2);
+                } 
+                else if (environment === "prod") {
+                    sendingAmount += sendingAmount * 0.05; // Add 5% to the amount
+                    document.getElementById("result").innerHTML = "Sending Amount: " + sendingAmount.toFixed(2);
+                }
+            
+            
+                else if (typeof environment=='string' && typeof sendingAmount =='string'){
+                    document.getElementById("result").innerHTML = "Please enter a valid Environment and a valid Amount " ;
+                }
+                else if (typeof environment=='string'){
+                    document.getElementById("result").innerHTML = "Please enter a valid Environment" ;
+                }
+            
+                else if (typeof sendingAmount =='string'){
+                    document.getElementById("result").innerHTML = "Please enter a valid Amount " ;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Environment Amount Calculator</h1>
+    
+    <label for="environment">Environment Type:</label>
+    <input type="text" id="environment" placeholder="dev, test, stage, prod"><br><br>
+    
+    <label for="sendingAmount">Sending Amount:</label>
+    <input type="text" id="sendingAmount" placeholder="Enter the amount"><br><br>
+    
+    <button onclick="calculateSendingAmount()">Calculate</button><br><br>
+    
+    <div id="result"></div>
+</body>
+</html>
