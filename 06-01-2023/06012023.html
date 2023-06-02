@@ -7,7 +7,7 @@
             var environment = document.getElementById("environment").value;
             
             var sendingAmount = (document.getElementById("sendingAmount").value);
-            if (typeof sendingAmount =='string'){
+            if (typeof sendingAmount =='string'||sendingAmount<0){
                 document.getElementById("result").innerHTML = "Please enter a valid Amount " ;
                 }
             else
