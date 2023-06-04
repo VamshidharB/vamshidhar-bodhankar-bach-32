@@ -6,9 +6,11 @@
         {
             var environment = document.getElementById("environment").value;
             
-            var sendingAmount = (document.getElementById("sendingAmount").value);
-            if (typeof sendingAmount =='string'||sendingAmount<0){
-                document.getElementById("result").innerHTML = "Please enter a valid Amount " ;
+            var sendingAmount = +(document.getElementById("sendingAmount").value);
+            
+            
+            if ( sendingAmount ==NaN||sendingAmount<0){
+                document.getElementById("result").innerHTML = "Please enter a valid Environment and Amount " ;
                 }
             else
             {
@@ -39,9 +41,7 @@
                 else if (typeof environment=='string' && typeof sendingAmount =='string'){
                     document.getElementById("result").innerHTML = "Please enter a valid Environment and a valid Amount " ;
                 }
-                else if (typeof environment=='string'){
-                    document.getElementById("result").innerHTML = "Please enter a valid Environment" ;
-                }
+                
             
                 else if (typeof sendingAmount =='string'){
                     document.getElementById("result").innerHTML = "Please enter a valid Amount " ;
@@ -51,7 +51,8 @@
     </script>
 </head>
 <body>
-    <h1>Environment Amount Calculator</h1>
+    <center>
+    <h1>Assignment 3</h1>
     
     <label for="environment">Environment Type:</label>
     <input type="text" id="environment" placeholder="dev, test, stage, prod"><br><br>
@@ -62,5 +63,6 @@
     <button onclick="calculateSendingAmount()">Calculate</button><br><br>
     
     <div id="result"></div>
+    </center>
 </body>
 </html>

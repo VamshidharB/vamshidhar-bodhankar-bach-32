@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Hobbies</title>
+</head>
+<body>
+  <h1>My Hobbies</h1>
+  <p id="output"></p>
+
+  <script>
+    function getHobbies() {
+      // Define your hobbies array
+      var hobbies = ["reading", "painting", "gardening", "playing guitar"];
+
+      // Return the array of hobbies
+      return hobbies;
+    }
+
+    // Function to update the HTML page
+    function displayHobbies() {
+      var hobbiesArray = getHobbies(); // Get the array of hobbies
+      var outputElement = document.getElementById("output"); // Get the <p> tag element
+
+      // Create a string to hold the HTML content
+      var content = "";
+
+      // Loop through the hobbies array and add each hobby to the content string
+      for (var i = 0; i < hobbiesArray.length; i++) {
+        content += hobbiesArray[i] + "<br>";
+      }
+
+      // Update the content of the <p> tag
+      outputElement.innerHTML = content;
+    }
+
+    // Call the function to display hobbies on page load
+    displayHobbies();
+  </script>
+</body>
+</html>

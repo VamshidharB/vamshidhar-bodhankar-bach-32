@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>Hobbies</title>
+        <script>
+        let hobbies= ['Playing chess',
+                          'Cricket',
+                          'Reading books',
+                          'Writing',
+                          'Cooking',
+                          'Traveling',
+                          'Social Media',
+                          'Coding'];
+        var str="";
+
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            document.getElementById("hobbies").innerHTML = displayhobbies();
+        });
+        
+        function displayhobbies(){
+            for (var i=0;i<hobbies.length;i++ ){
+                if(i<hobbies.length-1)
+                str=str+hobbies[i]+", ";
+                else
+                str=str+hobbies[i]+".";  
+            };
+            return str;
+        }
+        function displayhobbies1(){
+            str="The updated list is  ";
+            for (var i=0;i<hobbies.length;i++ ){
+                if(i<hobbies.length-1)
+                str=str+hobbies[i]+", ";
+                else
+                str=str+hobbies[i]+".";  
+            };
+            return str;
+        }
+
+        function AddOrRemove(){
+            var add = document.getElementById("add").value;
+            var remove=document.getElementById("remove").value;
+            if(add==remove){
+                document.getElementById("hobbies1").innerHTML = 'You are trying to add and remove the same hobby';
+            }
+            else{
+            if(add!="")
+            {
+                var a=hobbies.includes(add);
+                if(hobbies.includes(add)){
+                    document.getElementById("hobbies1").innerHTML = 'This hobby" '+add +' "is already included';
+
+                }
+                else{
+                if(add.includes(",")){
+                    hbs=add.split(',');
+                    for (var i=0;i<hbs.length;i++ ){
+                        if(hbs[i]!=""||hbs[i]!=" "){
+                            hobbies.push(hbs[i]);}
+                    document.getElementById("hobbies1").innerHTML = displayhobbies1();
+                        }
+
+                    
+                }
+                else{
+                    hobbies.push(add);
+                    document.getElementById("hobbies1").innerHTML = displayhobbies1();
+                }
+            }
+                
+            }
+            if(remove!=""){
+            var pos=hobbies.indexOf(remove);
+            if(pos!=-1) {
+                hobbies.splice(hobbies.indexOf(remove), 1);
+                document.getElementById("hobbies1").innerHTML = displayhobbies1();
+            }
+            else{
+                document.getElementById("hobbies1").innerHTML = 'There is no "'+remove+'" in the hobby list';
+            }
+        }
+        if(add==""&&remove=="")document.getElementById("hobbies1").innerHTML = displayhobbies1();
+            
+           
+            
+        }}
+        </script>
+    
+    </head>
+    <body>
+        <center><br><br>
+        Your Hobbies are:<br><br>
+        <div id="hobbies"></div>
+
+        <br>
+        If you want to add a hobby enter here :  <input type="text" id="add" placeholder=""><br><br>
+        
+        If you want to remove a hobby enter here :  <input type="text" id="remove" placeholder=""><br><br>
+
+        <button onclick="AddOrRemove()"> Submit</button>
+        <br>
+        <br>
+        <div id="hobbies1"></div><br>
+
+        
+
+        
+    </center>
+    </body>
+<html>
