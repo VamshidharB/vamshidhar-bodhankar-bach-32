@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Hobbies</title>
+        <script>
+            
+            function output(){
+                var fn = document.getElementById("fn").value;
+                var ln = document.getElementById("ln").value;
+                var dob = document.getElementById("dob").value;
+                var email = document.getElementById("email").value;
+                var phno = document.getElementById("phno").value;
+                if(fn==''||ln==''||dob==''||email==''||phno=='')
+                {
+                    alert("Please enter all the details");
+                }
+                
+                else{
+                    document.getElementById("op").innerHTML="<h2>The details you have entered are</h2><br>"+
+                    
+                    "<table>"+
+                    "<tr><td> First Name </td><td> : " + fn + "</td></tr>" +
+                    "<tr><td> Last Name </td><td> : " + ln + "</td></tr>" +
+                    "<tr><td> Date of Birth </td><td> : " + dob + "</td></tr>" +
+                    "<tr><td> Email </td><td> : " + email + "</td></tr>" +
+                    "<tr><td> Phone Number </td><td> : " + phno+"</td></tr></table>";
+                }
+                
+            }
+            
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1><br>Profilr Information</h1><br>
+            <table>
+            <tr><td>First Name:</td><td><input type="text" id="fn" placeholder="Enter Your First Name"></td></tr>
+            <tr><td>Last Name:</td><td><input type="text" id="ln"placeholder="Enter Your Last Name"></td></tr>
+            <tr><td>Date of Birth:</td><td><input type="text" id="dob" placeholder="MM/DD/YYYY"></td></tr>
+            <tr><td>Email: </td><td><input type="text" id="email"placeholder="example@example.com"></td></tr>
+            <tr><td>Phone Number: </td><td><input type="text" id="phno"placeholder="(000)000-0000"></td></tr></table><br>
+            <button id="submit" onclick="output()">Submit</button>
+            <p id="op"></p>
+        </center>
+
+   </body>
+</html>
