@@ -14,17 +14,14 @@
             var dob = document.getElementById("dob").value;
             
             function displayHbs() {
-            var hobbiesList = "";
-            var checkboxes = document.getElementsByName("hobbies");
-
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    hobbiesList += checkboxes[i].value + ", ";
+                var hobbiesList = "";
+                var arr = document.getElementsByName("hobbies");
+                for (var i = 0; i < arr.length; i++) {
+                if (arr[i].checked) {
+                    hobbiesList += arr[i].value + ", ";}
                 }
-            }
-
-            hobbiesList = hobbiesList.slice(0, -2); // Remove the trailing comma and space
-            return hobbiesList;
+                hobbiesList = hobbiesList.slice(0, -2); // Remove the trailing comma and space
+                return hobbiesList;
             }
             
         
