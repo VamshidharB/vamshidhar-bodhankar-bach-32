@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>protoType</title>
+    
+</head>
+<body>
+    <script>
+        // //let arr = [1, 2, 3, 4, 10, 5];
+        // let arr=[1,4,2,5,3]
+        // Math.__proto__.max= function (... arr){
+        //     console.log(arr[arr.length - 2]);
+        //     return arr[arr.length - 2];
+        // }
+        // // Math.max();
+        // console.log(Math.max());
+        // //console.log(Math.__proto__.max(...arr));
+        let arr=[1,4,2,5,3]
+         arr.__proto__.CoustomSort= function (){
+             
+             return arr[arr.length - 2];
+         }
+        // arr.CoustomSort();
+         console.log(arr[arr.length - 2]);
+        
+        </script>
+</body>
+</html>
