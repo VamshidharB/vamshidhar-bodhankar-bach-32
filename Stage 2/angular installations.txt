@@ -1,0 +1,8 @@
+1. install node 
+2. open cmd and do to the target directory n open cmd 
+3. type  "npm install -g @angular/cli" and hit enter 
+4. check for "ng version"
+if its successfull you can see the angular version 
+5. to create the package type "ng new [package name]" -> yes n hit enter choosing the CSS
+this will create the package named folder in the target directory 
+if its a mac add "sudo" at the begining 

@@ -1,0 +1,26 @@
+.header {
+  
+    font-size: 35px;
+    text-align: center;
+    background-color:lightblue;
+    border-right: 60px;
+    margin-left: 150px;
+    
+  }
+#src{  
+  position: fixed;  
+  margin-top: 1%;
+    margin-left:20%;
+}
+#lin{  
+  margin-top: 1%;  
+  position: fixed;
+  margin-left:30%;
+}
+#sbox{
+  margin-top: 1%;
+  position: fixed;
+  margin-left:10%; 
+}
+
+
