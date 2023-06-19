@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {MessagesService} from '../Messages.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,9 +8,16 @@ import {FormsModule} from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
-  firstName : string="";
+  firstName="";
+  lastName="";
+  email="";
+  password="";
+  phone="";
+  dob="";
+
+  constructor(private shared:MessagesService ) { }
   ngOnInit() {
   }
+  
 
 }

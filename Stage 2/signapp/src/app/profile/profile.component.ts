@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
 
-  firstName="vamshidhar";
-  lastName="bodhankar";
-  email="vamshi@gmail.com";
-  password="123456asd";
-  phone="12341234";
-  dob="02/06/1768";
+  firstName="";
+  lastName="";
+  email="";
+  password="1";
+  phone="";
+  dob="";
   constructor() { }
 
   ngOnInit() {
